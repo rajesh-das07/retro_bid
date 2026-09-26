@@ -1,0 +1,30 @@
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor Directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# User Uploads / Dynamic Content
+# We ignore files inside the uploads folder so we don't commit user-submitted images to git.
+/uploads/*
+# (Optional) Keep the uploads directory itself in git, just empty
+!/uploads/.gitkeep
+
+# Security & Configuration
+# If db_connect.php contains your real production database passwords, uncomment the line below!
+/db_connect.php
+
+# Log files
+*.log
+error_log

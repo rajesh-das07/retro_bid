@@ -1,0 +1,648 @@
+/* ==========================================================================
+   RETRO-BID LUXURY THEME SYSTEM (DARK & LIGHT MODES)
+   ========================================================================== */
+
+:root,
+[data-theme="dark"] {
+    color-scheme: dark;
+    accent-color: #C5A059;
+    --bg-primary: #1C1A17;
+    --bg-secondary: #11100E;
+    --bg-card: #181614;
+    --bg-card-alt: #221F1B;
+    --bg-card-hover: #26231F;
+    --bg-nav: rgba(17, 16, 14, 0.92);
+    --bg-overlay: rgba(28, 26, 23, 0.85);
+
+    --text-primary: #F7F4EB;
+    --text-secondary: #8A827A;
+    --text-muted: #66615B;
+    --text-inverse: #1C1A17;
+
+    --accent-gold: #C5A059;
+    --accent-gold-light: #E0BC75;
+    --accent-gold-dark: #9A7B3E;
+    --accent-gold-subtle: rgba(197, 160, 89, 0.15);
+
+    --border-color: rgba(197, 160, 89, 0.25);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-card: rgba(197, 160, 89, 0.2);
+
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 20px rgba(197, 160, 89, 0.2);
+
+    --input-bg: rgba(0, 0, 0, 0.4);
+    --input-border: #44403B;
+    --input-text: #F7F4EB;
+
+    --table-header-bg: #141311;
+    --table-row-border: rgba(255, 255, 255, 0.06);
+    --table-hover: rgba(197, 160, 89, 0.04);
+}
+
+[data-theme="light"] {
+    --bg-primary: #F7F4EB;
+    --bg-secondary: #EFEBE0;
+    --bg-card: #FFFFFF;
+    --bg-card-alt: #FAF8F2;
+    --bg-card-hover: #F2EDE2;
+    --bg-nav: rgba(247, 244, 235, 0.94);
+    --bg-overlay: rgba(247, 244, 235, 0.88);
+
+    --text-primary: #1C1A17;
+    --text-secondary: #5A534A;
+    --text-muted: #8A827A;
+    --text-inverse: #F7F4EB;
+
+    --accent-gold: #9E7B35;
+    --accent-gold-light: #B8934A;
+    --accent-gold-dark: #7B5F26;
+    --accent-gold-subtle: rgba(158, 123, 53, 0.12);
+
+    --border-color: rgba(158, 123, 53, 0.3);
+    --border-subtle: rgba(28, 26, 23, 0.1);
+    --border-card: #E5DFC8;
+
+    --shadow-soft: 0 10px 30px rgba(28, 26, 23, 0.06);
+    --shadow-card: 0 15px 35px rgba(28, 26, 23, 0.08);
+    --shadow-glow: 0 0 20px rgba(158, 123, 53, 0.15);
+
+    --input-bg: #FFFFFF;
+    --input-border: #D1C9BE;
+    --input-text: #1C1A17;
+
+    --table-header-bg: #EFEBE0;
+    --table-row-border: rgba(28, 26, 23, 0.08);
+    --table-hover: rgba(158, 123, 53, 0.05);
+}
+
+/* Base Body Application */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Universal Theme-Aware Navigation */
+nav {
+    background-color: var(--bg-nav) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    transition: background-color 0.35s ease, border-color 0.35s ease !important;
+}
+
+[data-theme="light"] .logo {
+    color: #1C1A17 !important;
+    text-shadow: none !important;
+}
+
+[data-theme="light"] .logo span {
+    color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] nav ul li a {
+    color: #1C1A17 !important;
+}
+
+[data-theme="light"] nav ul li a:hover {
+    color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] .btn-login {
+    border-color: var(--accent-gold) !important;
+    color: var(--accent-gold) !important;
+}
+
+[data-theme="light"] .btn-login:hover {
+    background-color: var(--accent-gold) !important;
+    color: #F7F4EB !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL DATE, TIME & CALENDAR PICKER LUXURY STYLING
+   ========================================================================== */
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"] {
+    color-scheme: dark;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(74%) sepia(35%) saturate(700%) hue-rotate(5deg) brightness(115%);
+    opacity: 0.9;
+    transform: scale(1.1);
+    transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.25);
+    filter: brightness(0) saturate(100%) invert(88%) sepia(50%) saturate(800%) hue-rotate(5deg) brightness(130%);
+}
+
+[data-theme="light"] input[type="date"],
+[data-theme="light"] input[type="datetime-local"],
+[data-theme="light"] input[type="time"] {
+    color-scheme: light;
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator,
+[data-theme="light"] input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+[data-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(40%) saturate(650%) hue-rotate(5deg) brightness(85%);
+    opacity: 0.85;
+}
+
+[data-theme="light"] input[type="date"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="light"] input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover,
+[data-theme="light"] input[type="time"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+    transform: scale(1.25);
+    filter: brightness(0) saturate(100%) invert(35%) sepia(50%) saturate(750%) hue-rotate(5deg) brightness(75%);
+}
+
+/* ==========================================================================
+   RETRO-BID ULTRA-LUXURY CUSTOM DATETIME PICKER COMPONENT
+   ========================================================================== */
+.luxury-dt-container {
+    position: relative;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.luxury-dt-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-family: inherit;
+    user-select: none;
+}
+
+[data-theme="light"] .luxury-dt-trigger {
+    background: #FFFFFF;
+    border-color: #D1C9BE;
+    border-bottom-color: var(--accent-gold);
+}
+
+.luxury-dt-trigger:hover,
+.luxury-dt-trigger.active {
+    border-color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.25);
+    background: rgba(197, 160, 89, 0.06);
+}
+
+.luxury-dt-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+}
+
+.luxury-dt-value.placeholder {
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.luxury-dt-date-tag {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.luxury-dt-time-badge {
+    background: rgba(197, 160, 89, 0.15);
+    color: var(--accent-gold);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.luxury-dt-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-gold);
+    transition: transform 0.25s ease;
+}
+
+.luxury-dt-trigger:hover .luxury-dt-icon,
+.luxury-dt-trigger.active .luxury-dt-icon {
+    transform: scale(1.18);
+}
+
+/* Modal / Dropdown Popover */
+.luxury-dt-popover {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 9999;
+    width: 530px;
+    max-width: 95vw;
+    background: var(--bg-card);
+    border: 1px solid var(--accent-gold);
+    box-shadow: var(--shadow-card), 0 0 35px rgba(197, 160, 89, 0.25);
+    border-radius: 8px;
+    padding: 14px 16px;
+    backdrop-filter: blur(24px);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    animation: dtFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Right-align closing window popover to avoid edge clipping */
+.luxury-dt-container[data-type="end"] .luxury-dt-popover {
+    left: auto;
+    right: 0;
+}
+
+@keyframes dtFadeIn {
+    from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.luxury-dt-popover.open {
+    display: flex;
+}
+
+/* Presets Bar */
+.luxury-dt-presets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.luxury-dt-preset-btn {
+    background: rgba(197, 160, 89, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+    color: var(--accent-gold);
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.luxury-dt-preset-btn:hover {
+    background: var(--accent-gold);
+    color: var(--text-inverse);
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.35);
+}
+
+/* Dual Pane Body */
+.luxury-dt-body {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 14px;
+    align-items: stretch;
+}
+
+@media (max-width: 620px) {
+    .luxury-dt-popover {
+        width: 320px;
+    }
+    .luxury-dt-body {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .luxury-dt-time-pane {
+        padding-left: 0 !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 10px;
+    }
+}
+
+.luxury-dt-calendar-pane {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Calendar Header */
+.luxury-dt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+}
+
+.luxury-dt-month-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.luxury-dt-nav-btn {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.luxury-dt-nav-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(197, 160, 89, 0.12);
+}
+
+/* Calendar Grid */
+.luxury-dt-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+}
+
+.luxury-dt-weekday {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    padding: 2px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.luxury-dt-day {
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    user-select: none;
+    border: 1px solid transparent;
+}
+
+.luxury-dt-day:hover:not(.disabled):not(.empty) {
+    border-color: var(--accent-gold);
+    background: rgba(197, 160, 89, 0.18);
+    color: var(--accent-gold);
+}
+
+.luxury-dt-day.today {
+    border-color: rgba(197, 160, 89, 0.6);
+    font-weight: 700;
+}
+
+.luxury-dt-day.selected {
+    background: var(--accent-gold) !important;
+    color: #11100E !important;
+    font-weight: 800 !important;
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.55);
+}
+
+.luxury-dt-day.disabled {
+    color: var(--text-muted);
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.luxury-dt-day.empty {
+    cursor: default;
+}
+
+/* Time & Actions Side Pane */
+.luxury-dt-time-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    padding-left: 14px;
+    border-left: 1px solid var(--border-subtle);
+}
+
+.luxury-dt-pane-heading {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.luxury-dt-time-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.luxury-dt-time-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+[data-theme="light"] .luxury-dt-time-box {
+    background: #FFFFFF;
+    border-color: #D1C9BE;
+}
+
+.luxury-dt-time-box:focus-within {
+    border-color: var(--accent-gold);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.25);
+}
+
+.luxury-dt-time-input {
+    width: 38px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    font-family: inherit;
+    padding: 0;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.luxury-dt-time-input::-webkit-outer-spin-button,
+.luxury-dt-time-input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    display: none !important;
+}
+
+.luxury-dt-time-steppers {
+    display: flex;
+    flex-direction: column;
+    height: 32px;
+    border-left: 1px solid var(--border-subtle);
+}
+
+.luxury-dt-time-step-btn {
+    flex: 1;
+    width: 18px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    line-height: 1;
+    padding: 0;
+    user-select: none;
+}
+
+.luxury-dt-time-step-btn:first-child {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.luxury-dt-time-step-btn:hover {
+    background: rgba(197, 160, 89, 0.2);
+    color: var(--accent-gold);
+}
+
+.luxury-dt-time-colon {
+    font-weight: 800;
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+.luxury-dt-ampm-btn {
+    height: 32px;
+    padding: 0 10px;
+    background: rgba(197, 160, 89, 0.12);
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 4px;
+    color: var(--accent-gold);
+    font-weight: 800;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.luxury-dt-ampm-btn:hover {
+    background: var(--accent-gold);
+    color: var(--text-inverse);
+    box-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+/* Quick Time Buttons Grid */
+.luxury-dt-quick-times-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+}
+
+.luxury-dt-quick-time-btn {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.62rem;
+    padding: 4px 2px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: all 0.2s ease;
+}
+
+.luxury-dt-quick-time-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+    background: rgba(197, 160, 89, 0.1);
+}
+
+/* Side Action Buttons */
+.luxury-dt-side-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 6px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.luxury-dt-btn-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    padding: 4px 6px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.luxury-dt-btn-clear:hover {
+    color: #ff5555;
+}
+
+.luxury-dt-btn-apply {
+    flex: 1;
+    background: var(--accent-gold);
+    color: #11100E;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(197, 160, 89, 0.3);
+}
+
+.luxury-dt-btn-apply:hover {
+    background: var(--accent-gold-light);
+    box-shadow: 0 4px 14px rgba(197, 160, 89, 0.5);
+    transform: translateY(-1px);
+}

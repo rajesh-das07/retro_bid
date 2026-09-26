@@ -1,0 +1,6 @@
+{
+    "maintenance_mode": false,
+    "min_bid_increment": 200,
+    "platform_fee": 10,
+    "admin_passcode": "admin"
+}
