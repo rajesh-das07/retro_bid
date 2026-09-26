@@ -235,21 +235,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_feedback'])) {
         }
 
         .slide-1-img {
-            background-image: url('https://hodinkee.imgix.net/uploads/hero_image/b2082d6f1512259210ef90d9876e75b7?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12');
+            background-image: url('images/slider 1 image.avif');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         .slide-2-img {
-            background-image: url('https://wallpapercave.com/wp/wp4766596.jpg');
+            background-image: url('images/slider 2 image.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
 
         .slide-3-img {
-            background-image: url('https://api.bertolamifineart.com/api/lotto/immagine/121869.jpg');
+            background-image: url('images/slider 3 image.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
